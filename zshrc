@@ -1,4 +1,5 @@
-export PATH="/usr/local/opt/opencv3/bin:$PATH"
+alias pk='pkill'
+export PATH="~/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Autojumpi
  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # End Autojump
