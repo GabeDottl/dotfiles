@@ -13,6 +13,12 @@ Broad tool overview:
 2) Atom (atom.io) for development - it's a highly hackable text editor that works well for quick editing. It works pretty well for Python development at least.
 3) ptpython (or really, ptipython) - a great interactive python shell that has advanced history support, history-based autocomplete, autosuggestions, docstrings, etc. https://github.com/jonathanslenders/ptpython. If you use ptipython (and have pip-installed iPython already), then if you're code throws and exception it won't exit the interpreter which is extremely helpful.
 
+A nice guide to some other useful CLI tools:
+https://remysharp.com/2018/08/23/cli-improved
+- fzf (fuzzy history searching)
+- bat (better cat)
+- tldr (tldr of man)
+
 To do some quick setup on a Mac, try running intial_setup.sh which will install homebrew, python3, and some python packages.
 
 Zsh + oh-my-zsh with 'fishy' theme:
