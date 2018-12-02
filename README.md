@@ -9,7 +9,7 @@ On a new machine, this setup would look something like:
 For example ln -s ~/dotfiles/public/zshrc ~/.zshrc.
 * Inside ~/dotfiles/public, clone this repo and then soft-link the files in it to your home directory (with the usual '.' prefix) as desired.
 Broad tool overview:
-1) zsh >> bash - zsh offers much more flexibility than bash and if you use your terminal at all, then you'll find the autocomplete functionality a huge timesaver
+1) zsh is much better than bash - zsh offers much more flexibility than bash and if you use your terminal at all, then you'll find the autocomplete functionality a huge timesaver
 2) Atom (atom.io) for development - it's a highly hackable text editor that works well for quick editing. It works pretty well for Python development at least.
 3) ptpython (or really, ptipython) - a great interactive python shell that has advanced history support, history-based autocomplete, autosuggestions, docstrings, etc. https://github.com/jonathanslenders/ptpython. If you use ptipython (and have pip-installed iPython already), then if you're code throws and exception it won't exit the interpreter which is extremely helpful.
 
