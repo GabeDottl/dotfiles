@@ -1,0 +1,88 @@
+  # Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.source.python':
+  'Docstring':
+    'prefix': '"""'
+    'body': '
+ """ $1\n
+\n
+    Args:\n
+        $2\n
+\n
+    Returns:\n
+        $3\n
+    """'
+
+  'Docstring2':
+    'prefix': 'doc'
+    'body': '
+ """ $1\n
+\n
+    Args:\n
+        $2\n
+\n
+    Returns:\n
+        $3\n
+    """'
+
+  'Log Info':
+    'prefix': 'linf',
+    'body':'logging.log(logging.INFO, \'$1\')'
+
+  'Log InfoX':
+    'prefix': 'linfx',
+    'body':'logging.log(logging.INFO, \'$1: {}\'.format($1))'
+
+  # 'Log Info':
+  #   'prefix': 'linf',
+  #   'body':'logging.getLogger(__name__).info("$1")'
+  #
+  # 'Log InfoX':
+  #   'prefix': 'linfx',
+  #   'body':'logging.getLogger(__name__).info("$1: %s" % str($1))'
+
+  'Log Debug':
+    'prefix': 'ldf',
+    'body':'logging.getLogger(__name__).debug("$1")'
+
+  'Log DebugX':
+    'prefix': 'ldx',
+    'body':'logging.getLogger(__name__).debug("$1: %s" % str($1))'
+
+  'Import Numpy':
+    'prefix': 'inp',
+    'body': 'import numpy as np'
+
+  'Import cv2':
+    'prefix': 'icv',
+    'body': 'import cv2'
+
+  'Node':
+    'prefix': 'Nod',
+    'body': 'Node(name=$1,scope=$2, operation=$3, outputs=$4, params=$5)'
+  'ConvOptions':
+    'prefix': 'Con',
+    'body': 'ConvOptions(filters=$1, kernel_size=$2, activation=$3)'
+  'ReshapeOptions':
+    'prefix': 'Res',
+    'body': 'ReshapeOptions(shape=$1)'

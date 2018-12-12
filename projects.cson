@@ -1,0 +1,23 @@
+[
+  {
+    title: "General"
+    paths: [
+      "/Users/gabe/Documents"
+      "/Users/gabe/shared/docs"
+      "/Users/gabe/dotfiles"
+    ]
+  }
+  {
+    title: "Python"
+    paths: [
+      "/Users/gabe/Computer_Vision/python"
+      "/Users/gabe/ubuntu"
+    ]
+  }
+  {
+    title: "Ubuntu Mirror"
+    paths: [
+      "/Users/gabe/ubuntu_mirror"
+    ]
+  }
+]

@@ -1,0 +1,71 @@
+: 1543189055:4;cp -r /Volumes/128GB_2/gabe.zip ~/.
+: 1543189065:0;unzip ~/gabe.zip .
+: 1543189067:31;unzip ~/gabe.zip
+: 1543189106:0;ls
+: 1543189123:0;mv gabe/dotfiles ~/synced/dotfiles
+: 1543189144:0;mv ~/synced/dotfiles/dotfiles ~/synced/dotfiles
+: 1543189150:0;mv ~/synced/dotfiles/dotfiles ~/synced/.
+: 1543189156:0;mv ~/synced/dotfiles/dotfiles ~/.
+: 1543189171:0;mv dotfiles ~/synced/dotfiles
+: 1543189176:0;mv ~/dotfiles ~/synced/dotfiles
+: 1543189177:0;ls
+: 1543189192:0;pwd
+: 1543189194:0;ls
+: 1543189196:0;cd dotfiles
+: 1543189197:0;.s
+: 1543189198:0;ls
+: 1543189202:0;mv dotfiles ../dotfiles2
+: 1543189204:0;cd ..
+: 1543189204:0;ls
+: 1543189208:0;rm -rf dotfiles
+: 1543189211:0;mv dotfiles2 dotfiles
+: 1543189213:0;ls dotfiles
+: 1543189217:0;ls dotfiles
+: 1543189219:0;ls -a dotfiles
+: 1543189245:28;vim dotfiles/public/zshrc
+: 1543189282:0;source ~/.zshr
+: 1543189283:0;source ~/.zshrc
+: 1543189296:0;ln -s ~/.zshrc ~/synced/dotfiles/public/zshrc
+: 1543189393:0;ln -s ~/synced/dotfiles/public/zshrc ~/.zshrc
+: 1543189395:0;source ~/.zshrc
+: 1543189411:0;curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+: 1543189422:0;source ~/.zshrc
+: 1543189423:0;ls
+: 1543189428:0;pip
+: 1543189429:0;pip3
+: 1543189482:0;pip3 install virtualenv venv
+: 1543189509:0;pip3 install ptpython ipython virtualenvwrapper jupyter
+: 1543189591:0;curl https://sdk.cloud.google.com | bash
+: 1543189683:0;source ~/.zshrc
+: 1543189689:0;ptipython
+: 1543189691:0;ptipython3
+: 1543189716:0;ln -s ~/synced/dotfiles/pythonrc  ~/.pythonrc
+: 1543189718:0;ptipython3
+: 1543189726:0;pip3 install numpy matplotlib scipy
+: 1543340713:0;cd ~
+: 1543340713:0;ls
+: 1543340716:0;ls -a
+: 1543340724:0;vim ~/.zshrc
+: 1543340732:0;vi ~/.zshrc
+: 1543340748:0;brew install vim
+: 1543340920:0;vim ~/.zshrc
+: 1543340961:0;source ~/.zshrc
+: 1543340961:0;ll
+: 1543341007:0;cd ~/synced/dotfiles
+: 1543341007:0;ls
+: 1543341008:0;ll
+: 1543341113:0;ls
+: 1543341114:0;ll
+: 1543341126:0;mkdir atom
+: 1543341150:0;ln -s ~/synced/dotfiles/atom  ~/.atom
+: 1543341166:0;ls
+: 1543341186:0;cat ~/.zsh_history >> zsh_history
+: 1543341194:0;ls
+: 1543341196:0;cd public
+: 1543341196:0;ls
+: 1543341213:0;vim ~/.zshrc
+: 1543341223:0;source ~/.zshrc
+: 1543341224:0;cat
+: 1543341228:0;zsh
+: 1543341229:0;cat
+: 1543341235:0;cat ~/.zsh_history >> zsh_history

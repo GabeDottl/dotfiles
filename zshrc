@@ -1,5 +1,24 @@
-alias pk='pkill'
-export PATH="~/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
+# Gcloud auth - https://cloud.google.com/docs/authentication/production
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
+
+export REMOTE=192.168.1.33
+
+alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
+alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
+alias sshj='ssh gabe@$REMOTE'
+
+#iTerm shell integration
+source ~/.iterm2_shell_integration.zsh
+# End iTerm shell int
+
+
+#PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%}'
+#export AUTOSUGGESTION_HIGHLIGHT_STYLE='fg=250'
+#alias cat='bat'
+#alias man='tldr'
+#-f indicates using the full command
+alias pk='pkill -f '
+export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Autojumpi
  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # End Autojump
@@ -7,8 +26,11 @@ export PATH="~/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 #alias pk='pkill'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
-export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-8.0.61/lib\${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}"}
-export DOTFILES="/Users/gabe/dotfiles"
+export PATH="$HOME:/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
+export PATH="/usr/local/sbin:$PATH"
+export DOTFILES="/Users/gabe/synced/dotfiles"
+export PYTHONSTARTUP='$HOME/.pythonrc'
+export PYTHONPATH="/Users/gabe/nineslashnine/third_party/keras-retinanet:$PYTHONPATH"
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Does PYTHON3PATH mean anything? Who knows.
 # export PYTHON3PATH=/usr/local/lib/python3.6/site-packages:$PYTHO3PATH
@@ -57,7 +79,7 @@ ZSH_THEME="fishy"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# export UPDATE_ZSH_DAY=13
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -88,7 +110,7 @@ ZSH_THEME="fishy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions fzf-zsh)
+plugins=(zsh-autosuggestions fzf-zsh zsh-command-time command-time)
 
 # User configuration
 
@@ -122,7 +144,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #export PATH=$PATH:"/Applications/Android Studio.app/sdk/platform-tools"
- [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+alias ll='ls -la'
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 #source ~/.zsh/fish-prompt
 #PROMPT=~/.zsh/fish-prompt
 export PATH="/usr/local/bin:$PATH"
@@ -135,3 +158,26 @@ export PKG_CONFIG_PATH="/usr/local/opt/opencv3/lib/pkgconfig"
 # #end OpenCV3
 export PATH="/usr/local/opt/opencv3/bin:$PATH"
 source "$DOTFILES/.bash_aliases"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
+# If command execution time above min. time, plugins will not output time.
+export ZSH_COMMAND_TIME_MIN_SECONDS=1
+
+# Message to display (set to "" for disable).
+export ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
+setopt PROMPT_SUBST
+# https://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
+PROMPT='%{$(pwd|grep --color=always /)%${#PWD}G%} %(!.%F{red}.%F{cyan})%f%(!.%F{red}.)>%f '
+
+export PROJECT="nsn-cloud-playground"
+export BUCKETP2C="$PROJECT-pix2code"
+export CLOUDSDK_PYTHON=python
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gabe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gabe/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabe/google-cloud-sdk/completion.zsh.inc'; fi
+
+export VIRTUALENVWRAPPER_PYTHON=python3

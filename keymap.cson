@@ -1,0 +1,201 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+'atom-text-editor[data-grammar~="python"]:not([mini])':
+  'ctrl-alt-u': 'python-tools:show-usages'
+
+'.platform-darwin atom-workspace':
+  'alt-shift-G': 'symbol-gen:generate'
+'atom-workspace':
+  'ctrl-{': 'last-cursor-position:previous'
+  'ctrl-}': 'last-cursor-position:next'
+  'alt-ctrl-f': 'platformio-ide-terminal:focus'
+  # 'alt-up': 'multi-cursor-plus:move-up'
+  # 'alt-down': 'multi-cursor-plus:move-down'
+
+
+'atom-text-editor':
+  'ctrl-alt-f': 'platformio-ide-terminal:focus'
+  # Start Line Jumper
+  'ctrl-up': 'line-jumper:move-up'
+  'ctrl-down': 'line-jumper:move-down'
+  'ctrl-shift-up': 'line-jumper:select-up'
+  'ctrl-shift-down': 'line-jumper:select-down'
+  # End Line Jumper
+  'ctrl-left': 'window:focus-pane-on-left'
+  'ctrl-right': 'window:focus-pane-on-right'
+  'ctrl-shift-left': 'window:move-active-item-to-pane-on-left'
+  'ctrl-shift-right': 'window:move-active-item-to-pane-on-right'
+  'cmd-|': 'tree-view:toggle-focus'
+  # Pane movement
+  'alt-z': 'maximize-panes:maximize'
+  # ###############################'ctrl-arrows works'########################
+  # 'ctrl-alt-cmd-shift-right': 'window:focus-pane-on-right'
+  # 'ctrl-alt-cmd-shift-left': 'window:focus-pane-on-left'
+  # 'ctrl-alt-cmd-shift-up': 'window:focus-pane-above'
+  # 'ctrl-alt-cmd-shift-down': 'window:focus-pane-below'
+  # End Pane movement
+
+'.platform-darwin body':
+  'cmd-k left':  'pane:split-left-and-move-active-item'
+  'cmd-k right': 'pane:split-right-and-move-active-item'
+
+
+'.platform-darwin atom-text-editor':
+  # 'ctrl-r': 'script:run'
+  'ctrl-shift-c': 'run:terminate'
+  'ctrl-shift-r': 'script:run-with-profile'
+  'ctrl-w': 'script:close-view'
+  'ctrl-c': 'script:kill-process'
+
+  'ctrl-alt-down': 'atom-ctags:go-to-declaration'
+  'ctrl-alt-up': 'atom-ctags:return-from-declaration'
+
+  # 'shift-cmd-j': 'script:run-by-line-number'
+  # 'shift-cmd-i': 'script:run-options'
+
+# '.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+#   'alt-r': 'run:script'
+#   'alt-shift-r': 'run:copy'
+# '.workspace':
+  # 'cmd-w': 'Kite: Close Sidebar'
+
+# '.platform-darwin .atom-runner':
+#   'cmd-c': 'run:copy'
+
+'.atom-script':
+  'escape': 'run:exit'
+
+# OSX keymaps are different of atom's default
+# because ctrl-shift up and down are OS shortcuts for
+# mission control and application windows by default.
+'.platform-darwin atom-text-editor:not(mini)':
+
+  # Expand current cursor
+  'alt-down': 'multi-cursor:expandDown'
+  'alt-up':   'multi-cursor:expandUp'
+
+  # Move the last cursor.
+  # Conflict with ctags below.
+  # 'ctrl-alt-down':  'multi-cursor:move-last-cursor-down'
+  # 'ctrl-alt-right': 'multi-cursor:move-last-cursor-right'
+  'ctrl-alt-left':  'multi-cursor:move-last-cursor-left'
+  'ctrl-alt-up':    'multi-cursor:move-last-cursor-up'
+
+
+
+# Linux keybindings
+# '.platform-linux atom-text-editor:not(mini)':
+#
+#   # Expand current cursor
+#   'ctrl-shift-down': 'multi-cursor:expandDown'
+#   'ctrl-shift-up':   'multi-cursor:expandUp'
+#
+#   # Move the last cursor.
+#   'ctrl-shift-alt-down':  'multi-cursor:move-last-cursor-down'
+#   'ctrl-shift-alt-right': 'multi-cursor:move-last-cursor-right'
+#   'ctrl-shift-alt-left':  'multi-cursor:move-last-cursor-left'
+#   'ctrl-shift-alt-up':    'multi-cursor:move-last-cursor-up'
+#
+#
+#
+# # Windows keybindings
+# '.platform-win32 atom-text-editor:not(mini)':
+#
+#   # Expand current cursor
+#   'alt-down': 'multi-cursor:expandDown'
+#   'alt-up':   'multi-cursor:expandUp'
+#
+#   # Move the last cursor.
+#   'ctrl-shift-alt-down':  'multi-cursor:move-last-cursor-down'
+#   'ctrl-shift-alt-right': 'multi-cursor:move-last-cursor-right'
+#   'ctrl-shift-alt-left':  'multi-cursor:move-last-cursor-left'
+#   'ctrl-shift-alt-up':    'multi-cursor:move-last-cursor-up'
+
+
+#'atom-workspace':
+#  # Key bindings for multi-cursor
+#  'alt-x':                'multi-cursor-plus:mark'
+#  'alt-up':               'multi-cursor-plus:move-up'
+#  'alt-down':             'multi-cursor-plus:move-down'
+#  'alt-left':             'multi-cursor-plus:move-left'
+#  'alt-right':            'multi-cursor-plus:move-right'
+#  'ctrl-alt-left':        'multi-cursor-plus:move-to-beginning-of-word'
+#  'ctrl-alt-right':       'multi-cursor-plus:move-to-end-of-word'
+#  'alt-home':             'multi-cursor-plus:move-to-first-character-of-line'
+#  'alt-end':              'multi-cursor-plus:move-to-end-of-line'
+#  'ctrl-alt-home':        'multi-cursor-plus:move-to-top'
+#  'ctrl-alt-end':         'multi-cursor-plus:move-to-bottom'
+#  'alt-shift-up':         'multi-cursor-plus:select-up'
+#  'alt-shift-down':       'multi-cursor-plus:select-down'
+#  'alt-shift-left':       'multi-cursor-plus:select-left'
+#  'alt-shift-right':      'multi-cursor-plus:select-right'
+#  'ctrl-alt-shift-left':  'multi-cursor-plus:select-to-beginning-of-word'
+#  'ctrl-alt-shift-right': 'multi-cursor-plus:select-to-end-of-word'
+#  'alt-shift-home':       'multi-cursor-plus:select-to-first-character-of-line'
+#  'alt-shift-end':        'multi-cursor-plus:select-to-end-of-line'
+#  'ctrl-alt-shift-home':  'multi-cursor-plus:select-to-top'
+#  'ctrl-alt-shift-end':   'multi-cursor-plus:select-to-bottom'
+
+# '.platform-darwin atom-text-editor':
+
+
+
+
+# '.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+#   'shift-ctrl-b': 'script:run'
+#   'shift-ctrl-alt-b': 'script:run-with-profile'
+#   #'shift-enter': 'script:run'
+#   #'ctrl-w': 'script:close-view'
+#   'ctrl-q': 'script:kill-process'
+#   'shift-ctrl-j': 'script:run-by-line-number'
+#   'shift-ctrl-alt-o': 'script:run-options'
+
+
+# '.platform-darwin atom-text-editor':
+#   'ctrl-x': 'run:script'
+
+# '.platform-darwin atom-workspace':
+#   'ctrl-c': 'run:terminate'
+#
+# '.platform-linux atom-text-editor':
+#   'alt-x': 'run:script'
+
+# '.platform-linux atom-workspace':
+#   'alt-c': 'run:terminate'
+
+# Copy from script runner pane:
+# '.platform-darwin .script-runner':
+#   'cmd-c': 'run:copy'
+#
+# '.platform-linux .script-runner':
+#   'ctrl-c': 'run:copy'
