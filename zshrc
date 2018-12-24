@@ -1,12 +1,12 @@
+#export HOSTNAME=$(hostname)
 # Gcloud auth - https://cloud.google.com/docs/authentication/production
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
-
 export REMOTE=192.168.1.33
 
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
 alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
-alias sshj='ssh gabe@$REMOTE'
-
+alias sshj='ssh gabe@$REMOTE -t tmux a'
+alias sshjn='ssh gabe@$REMOTE -t tmux'
 #iTerm shell integration
 source ~/.iterm2_shell_integration.zsh
 # End iTerm shell int
@@ -27,7 +27,7 @@ export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
 export PATH="$HOME:/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 export DOTFILES="/Users/gabe/synced/dotfiles"
 export PYTHONSTARTUP='$HOME/.pythonrc'
 export PYTHONPATH="/Users/gabe/nineslashnine/third_party/keras-retinanet:$PYTHONPATH"
@@ -53,13 +53,13 @@ export LD_LIBRARY_PATH=/usr/local/lib
 source "$DOTFILES/.shared_functions"
 source "$DOTFILES/.shared_rc"
 source "$DOTFILES/.profile"
-source "$DOTFILES/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+#source "$DOTFILES/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
  #Old $PATH
 # /usr/local/bin:/usr/local/bin:/Users/gabe/Dropbox/Computer_Vision/bin:/usr/local/bin:/usr/local/rvm/gems/ruby-1.9.3-p194/bin:/usr/local/rvm/gems/ruby-1.9.3-p194@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p194/bin:/usr/local/rvm/bin:/usr/bin:/bin:/Applications/Android Studio.app/sdk/platform-tools:/Applications/Android Studio.app/sdk/platform-tools:/Applications/Android Studio.app/sdk/platform-tools
 
 # Path to your oh-my-zsh installation.
-export ZSH="$DOTFILES/.oh-my-zsh"
+export ZSH="$HOME/oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -110,7 +110,7 @@ ZSH_THEME="fishy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions fzf-zsh zsh-command-time command-time)
+plugins=(zsh-autosuggestions fzf fzf-zsh zsh-command-time command-time)
 
 # User configuration
 

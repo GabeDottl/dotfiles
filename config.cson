@@ -38,8 +38,8 @@
       "file-watcher"
       "symbols-list"
       "autocomplete-python-jedi"
-      "symbols-view"
       "github"
+      "symbols-view"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [

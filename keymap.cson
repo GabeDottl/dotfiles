@@ -73,7 +73,8 @@
 '.platform-darwin atom-text-editor':
   # 'ctrl-r': 'script:run'
   'ctrl-shift-c': 'run:terminate'
-  'ctrl-shift-r': 'script:run-with-profile'
+  'ctrl-r':'autocomplete-python:rename'
+  # 'ctrl-shift-r': 'script:run-with-profile'
   'ctrl-w': 'script:close-view'
   'ctrl-c': 'script:kill-process'
 
