@@ -88,6 +88,7 @@
     withPyflakes: true
   "linter-ui-default":
     panelHeight: 69
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "platformio-ide-terminal":

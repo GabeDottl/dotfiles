@@ -5,8 +5,9 @@ export REMOTE=192.168.1.33
 
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
 alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
-alias sshj='ssh gabe@$REMOTE -t tmux a'
-alias sshjn='ssh gabe@$REMOTE -t tmux'
+# -Y for trusted X11 forwarding.
+alias sshj='ssh gabe@$REMOTE -Y -t tmux a'
+alias sshjn='ssh gabe@$REMOTE -Y -t tmux'
 #iTerm shell integration
 source ~/.iterm2_shell_integration.zsh
 # End iTerm shell int
@@ -29,6 +30,8 @@ export PATH="/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
 export PATH="$HOME:/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 export DOTFILES="/Users/gabe/synced/dotfiles"
+export SAVEHIST=10000000
+export HISTFILE="$DOTFILES/config/zsh_history"
 export PYTHONSTARTUP='$HOME/.pythonrc'
 export PYTHONPATH="/Users/gabe/nineslashnine/third_party/keras-retinanet:$PYTHONPATH"
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -157,7 +160,7 @@ export CPPFLAGS="-I/usr/local/opt/opencv3/include"
 export PKG_CONFIG_PATH="/usr/local/opt/opencv3/lib/pkgconfig"
 # #end OpenCV3
 export PATH="/usr/local/opt/opencv3/bin:$PATH"
-source "$DOTFILES/.bash_aliases"
+source "$DOTFILES/config/bash_aliases"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
