@@ -2,7 +2,7 @@
 # Gcloud auth - https://cloud.google.com/docs/authentication/production
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
 export REMOTE=192.168.1.33
-
+export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
 alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
 # -Y for trusted X11 forwarding.
@@ -29,7 +29,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
 export PATH="$HOME:/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
-export DOTFILES="/Users/gabe/synced/dotfiles"
+export DOTFILES="/Users/gabe/dotfiles"
 export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/config/zsh_history"
 export PYTHONSTARTUP='$HOME/.pythonrc'

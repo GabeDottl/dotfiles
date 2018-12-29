@@ -1,0 +1,10 @@
+rm -rf ~/.ssh
+rm -rf ~/.zsh
+rm -rf .zshrc
+rm -rf .zsh_history
+rm -rf ~/.gitconfig
+rm -rf ~/.gitignore_global
+rm -rf ~/.pythonrc
+rm -rf ~/.ptpython
+rm -rf ~/.tmux.conf
+rm -rf ~/.jupyter

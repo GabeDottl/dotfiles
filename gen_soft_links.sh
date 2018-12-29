@@ -4,6 +4,8 @@ ln -s $DOTFILES/public/zshrc ~/.zshrc
 ln -s $DOTFILES/zsh_history ~/.zsh_history
 ln -s $DOTFILES/vimrc ~/.vimrc
 ln -s $DOTFILES/gitconfig ~/.gitconfig
+ln -s $DOTFILES/public/gitignore_global ~/.gitignore_global
 ln -s $DOTFILES/pythonrc ~/.pythonrc
-ln -s $DOTFILES/vimrc ~/.vimrc
 ln -s $DOTFILES/public/ptpython ~/.ptpython
+ln -s $DOTFILES/public/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES/jupyter ~/.jupyter
