@@ -65,7 +65,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 # /usr/local/bin:/usr/local/bin:/Users/gabe/Dropbox/Computer_Vision/bin:/usr/local/bin:/usr/local/rvm/gems/ruby-1.9.3-p194/bin:/usr/local/rvm/gems/ruby-1.9.3-p194@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p194/bin:/usr/local/rvm/bin:/usr/bin:/bin:/Applications/Android Studio.app/sdk/platform-tools:/Applications/Android Studio.app/sdk/platform-tools:/Applications/Android Studio.app/sdk/platform-tools
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/oh-my-zsh"
+export ZSH="$DOTFILES/oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -151,7 +151,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #export PATH=$PATH:"/Applications/Android Studio.app/sdk/platform-tools"
 alias ll='ls -la'
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[[ -s /usr/local/etc/profile.d/autojump.sh ]] && . /usr/local/etc/profile.d/autojump.sh
 #source ~/.zsh/fish-prompt
 #PROMPT=~/.zsh/fish-prompt
 export PATH="/usr/local/bin:$PATH"
