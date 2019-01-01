@@ -2,127 +2,27 @@
   "atom-beautify":
     python:
       default_beautifier: "yapf"
-      formater: "yapf"
       formatter: "yapf"
-      max_line_length: 80
-      sort_imports: true
   "autocomplete-python":
-    showTooltips: true
     useKite: false
-    useSnippets: "required"
-  "autocomplete-python-jedi":
-    outputProviderErrors: true
-    useSnippets: "required"
-  "clang-format": {}
-  "command-palette":
-    preserveLastSearch: true
   core:
-    closeEmptyWindows: false
     disabledPackages: [
-      "python-debugger"
-      "linter-flake8"
-      "jupyter-notebook"
-      "platformio-ide-terminal"
-      "script"
-      "git-plus"
-      "graphviz-preview-plus"
-      "kite"
-      "atom-runner"
-      "editor-stats"
-      "git-time-machine"
-      "language-dot"
-      "MagicPython"
-      "atom-terminal-panel"
-      "autoclose-html"
-      "custom-title"
-      "file-watcher"
-      "symbols-list"
-      "autocomplete-python-jedi"
-      "github"
       "symbols-view"
+      "MagicPython"
     ]
-    excludeVcsIgnoredPaths: false
-    ignoredNames: [
-      ".scssc"
-      ".sass-cache"
-      ".git"
-      ".hg"
-      ".svn"
-      ".DS_Store"
-      "Thumbs.db"
-      "node_modules"
-      "packages"
-      ".oh-my-zsh"
-      ".vim"
-      ".zsh"
-      ".markdown"
-      ".tags"
-    ]
-    packagesWithKeymapsDisabled: [
-      "symbol-gen"
-      "maximize-panes"
-    ]
-    telemetryConsent: "no"
-  "custom-title":
-    template: "<%= filePath %><% if (projectPath) { %> - <%= projectPath %><% if (gitHead) { %> [<%= gitHead %>]<% } %><% } %>"
   editor:
-    fontSize: 12
-    showIndentGuide: true
-    showInvisibles: true
-    tabLength: 2
     tabType: "soft"
   "exception-reporting":
-    userId: "b5d099bd-a544-4e7a-91e1-19bcdab54826"
-  "fuzzy-finder":
-    preserveLastSearch: true
-  "incremental-search":
-    instantSearch: true
-  kite:
-    showKiteTourOnStartup: false
-    sidebarWidth: 300
-  linter: {}
+    userId: "aee53ac6-b19d-4606-85ca-4579c8516c8a"
   "linter-python":
-    executablePath: "/usr/local/bin/pylama"
-    ignoreCodes: "E111,W0311,D107,D213,D211,C0111,E114"
-    withPep8: true
-    withPyflakes: true
+    executablePath: "/usr/local/"
   "linter-ui-default":
     panelHeight: 69
-    showPanel: true
-  "markdown-preview":
-    useGitHubStyle: true
-  "platformio-ide-terminal":
-    core:
-      shell: "/bin/zsh"
-    style:
-      animationSpeed: 10
-      theme: "homebrew"
-  "python-autopep8": {}
-  "python-import-magic":
-    pythonPaths: "/usr/local/bin/python3"
-  "python-tools":
-    smartBlockSelection: false
-  "script-runner":
-    extensions:
-      ps1: "powershell –file"
-      "spec.coffee": "mocha"
-    scopes:
-      coffee: "coffee"
-      go: "go run"
-      js: "node"
-      powershell: "powershell -noninteractive -noprofile -c -"
-      python: "python3"
-      ruby: "ruby"
-      shell: "bash"
-  "symbols-tree-view": {}
-  "tree-view":
-    squashDirectoryNames: true
-  welcome:
-    showOnStartup: false
+  "python-import-magic": {}
 ".python.regexp.source":
   editor:
     tabLength: 2
 ".python.source":
   editor:
-    autoIndent: true
+    showInvisibles: true
     tabLength: 2

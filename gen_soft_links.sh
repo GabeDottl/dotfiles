@@ -1,3 +1,4 @@
+ln -s $DOTFILES/config ~/.config
 ln -s $DOTFILES/ssh ~/.ssh
 ln -s $DOTFILES/zsh ~/.zsh
 ln -s $DOTFILES/public/zshrc ~/.zshrc
@@ -6,6 +7,6 @@ ln -s $DOTFILES/vimrc ~/.vimrc
 ln -s $DOTFILES/gitconfig ~/.gitconfig
 ln -s $DOTFILES/public/gitignore_global ~/.gitignore_global
 ln -s $DOTFILES/pythonrc ~/.pythonrc
-ln -s $DOTFILES/public/ptpython ~/.ptpython
+ln -s $DOTFILES/ptpython ~/.ptpython
 ln -s $DOTFILES/public/tmux.conf ~/.tmux.conf
 ln -s $DOTFILES/jupyter ~/.jupyter

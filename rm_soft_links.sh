@@ -1,3 +1,4 @@
+rm -rf ~/.config
 rm -rf ~/.ssh
 rm -rf ~/.zsh
 rm -rf .zshrc
