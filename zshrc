@@ -35,6 +35,11 @@ export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/config/zsh_history"
 export PYTHONSTARTUP='$HOME/.pythonrc'
 export PYTHONPATH="/Users/gabe/nineslashnine/third_party/keras-retinanet:$PYTHONPATH"
+export PATH="/usr/local/bin:$PATH"
+export WORKON_HOME=~/.virtualenvs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#source /usr/local/bin/virtualenvwrapper.sh 
+
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Does PYTHON3PATH mean anything? Who knows.
 # export PYTHON3PATH=/usr/local/lib/python3.6/site-packages:$PYTHO3PATH
@@ -54,9 +59,6 @@ function frameworkpython {
 export CPATH=/usr/local/include
 export LIBRARY_PATH=/usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib
-source "$DOTFILES/.shared_functions"
-source "$DOTFILES/.shared_rc"
-source "$DOTFILES/.profile"
 #source "$DOTFILES/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
  #Old $PATH
