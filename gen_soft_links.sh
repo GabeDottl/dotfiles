@@ -3,8 +3,8 @@ ln -s $DOTFILES/ssh ~/.ssh
 ln -s $DOTFILES/zsh ~/.zsh
 ln -s $DOTFILES/public/zshrc ~/.zshrc
 #ln -s $DOTFILES/zsh_history ~/.zsh_history Un-necessary
-ln -s $DOTFILES/vimrc ~/.vimrc
-ln -s $DOTFILES/gitconfig ~/.gitconfig
+ln -s $DOTFILES/config/vimrc ~/.vimrc
+ln -s $DOTFILES/config/gitconfig ~/.gitconfig
 ln -s $DOTFILES/public/gitignore_global ~/.gitignore_global
 ln -s $DOTFILES/pythonrc ~/.pythonrc
 ln -s $DOTFILES/ptpython ~/.ptpython
