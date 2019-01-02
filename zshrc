@@ -17,7 +17,7 @@ alias sshjn='ssh gabe@$REMOTE -Y -t tmux'
 #alias cat='bat'
 #alias man='tldr'
 #-f indicates using the full command
-alias pk='pkill -f '
+alias pk='pkill -f -9 '
 export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Autojumpi
  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -30,12 +30,12 @@ export PATH="$HOME:/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
-export PYTHONSTARTUP='$HOME/.pythonrc'
+export PYTHONSTARTUP=$HOME/.pythonrc
 export PYTHONPATH="/Users/gabe/nineslashnine/third_party/keras-retinanet:$PYTHONPATH"
 export PATH="/usr/local/bin:$PATH"
 export WORKON_HOME=~/.virtualenvs
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#source /usr/local/bin/virtualenvwrapper.sh 
+export VIRTUALENVWRAPPER_PYTHON=python3
+source /usr/local/bin/virtualenvwrapper.sh 
 
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Does PYTHON3PATH mean anything? Who knows.
@@ -118,7 +118,7 @@ plugins=(zsh-autosuggestions fzf fzf-zsh zsh-command-time command-time)
 # User configuration
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
- export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -184,3 +184,5 @@ if [ -f '/Users/gabe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gabe/googl
 if [ -f '/Users/gabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabe/google-cloud-sdk/completion.zsh.inc'; fi
 
 export VIRTUALENVWRAPPER_PYTHON=python3
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

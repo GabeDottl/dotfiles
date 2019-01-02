@@ -7,6 +7,7 @@ ln -s $DOTFILES/config/vimrc ~/.vimrc
 ln -s $DOTFILES/config/gitconfig ~/.gitconfig
 ln -s $DOTFILES/public/gitignore_global ~/.gitignore_global
 ln -s $DOTFILES/pythonrc ~/.pythonrc
-ln -s $DOTFILES/ptpython ~/.ptpython
+ln -s $DOTFILES/config/ptpython_history ~/.ptpython/history
+ln -s $DOTFILES/config/ptpython/config.py ~/.ptpython/config.py
 ln -s $DOTFILES/public/tmux.conf ~/.tmux.conf
 ln -s $DOTFILES/jupyter ~/.jupyter
