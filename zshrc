@@ -1,5 +1,5 @@
 export DOTFILES=$HOME/dotfiles
-source $DOTFILES/config/$HOST/vars
+source $DOTFILES/config/$HOST/zshrc
 #export HOSTNAME=$(hostname)
 # Gcloud auth - https://cloud.google.com/docs/authentication/production
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
@@ -10,9 +10,6 @@ alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced
 # -Y for trusted X11 forwarding.
 alias sshj='ssh gabe@$REMOTE -Y -t tmux a'
 alias sshjn='ssh gabe@$REMOTE -Y -t tmux'
-#iTerm shell integration
-source ~/.iterm2_shell_integration.zsh
-# End iTerm shell int
 
 
 #PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%}'
