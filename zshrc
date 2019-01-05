@@ -1,6 +1,6 @@
 export DOTFILES=$HOME/dotfiles
 source $DOTFILES/config/$HOST/zshrc
-#export HOSTNAME=$(hostname)
+export HOSTNAME=$(hostname) # Needed for TMUX
 # Gcloud auth - https://cloud.google.com/docs/authentication/production
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
 export REMOTE=192.168.1.33
@@ -25,8 +25,6 @@ export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH
 
 #alias pk='pkill'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export PATH="/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
-export PATH="$HOME:/Developer/NVIDIA/CUDA-8.0.61/bin${PATH:+:${PATH}}"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
@@ -53,9 +51,6 @@ function frameworkpython {
 
 
 # THis in included at the bottom to override everyone elses.: source ~/.bash_aliases
-export CPATH=/usr/local/include
-export LIBRARY_PATH=/usr/local/lib
-export LD_LIBRARY_PATH=/usr/local/lib
 #source "$DOTFILES/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
  #Old $PATH
