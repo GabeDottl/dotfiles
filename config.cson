@@ -5,6 +5,7 @@
       formatter: "yapf"
   "autocomplete-python":
     useKite: false
+    useSnippets: "required"
   core:
     disabledPackages: [
       "symbols-view"
