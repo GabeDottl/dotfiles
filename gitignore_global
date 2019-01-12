@@ -159,3 +159,9 @@ datasets/*
 
 # Training output
 bin/
+
+# Atom nonsense
+*.tags*
+*.tags1
+*.tags
+.magicindex.json
