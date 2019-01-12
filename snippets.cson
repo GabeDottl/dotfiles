@@ -47,11 +47,11 @@
 
   'Log Info':
     'prefix': 'linf',
-    'body':'logging.log(logging.INFO, \'$1\')'
+    'body':'info(\'$1\')'
 
   'Log InfoX':
     'prefix': 'linfx',
-    'body':'logging.log(logging.INFO, \'$1: {}\'.format($1))'
+    'body':'info(\'$1: {}\'.format($1))'
 
   # 'Log Info':
   #   'prefix': 'linf',
