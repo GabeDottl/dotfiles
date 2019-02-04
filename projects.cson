@@ -1,23 +1,21 @@
 [
   {
-    title: "General"
+    title: "Linux Code Repo"
     paths: [
-      "/Users/gabe/Documents"
-      "/Users/gabe/shared/docs"
-      "/Users/gabe/dotfiles"
+      "/Users/gabe/ldrive/code/stock_optimization"
     ]
+    color: "green"
+    devMode: true
   }
   {
-    title: "Python"
+    title: "Macbook Code Repo"
     paths: [
-      "/Users/gabe/Computer_Vision/python"
-      "/Users/gabe/ubuntu"
+      "/Users/gabe/code/stock_optimization"
+      "/Users/gabe/code/tensorflow_utils"
+      "/Users/gabe/code/alpha_vantage"
+      "/Users/gabe/code/Robinhood"
     ]
-  }
-  {
-    title: "Ubuntu Mirror"
-    paths: [
-      "/Users/gabe/ubuntu_mirror"
-    ]
+    color: "red"
+    devMode: true
   }
 ]

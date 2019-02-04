@@ -1,9 +1,10 @@
+export DATA=$HOME/data
 export DOTFILES=$HOME/dotfiles
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
 # Gcloud auth - https://cloud.google.com/docs/authentication/production
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
-export REMOTE=192.168.1.33
+export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
 alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
@@ -28,7 +29,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
-export PYTHONSTARTUP=$DOTFILES/pythonrc
+export PYTHONSTARTUP=$DOTFILES/config/pythonrc
 export PYTHONPATH="/Users/gabe/nineslashnine/third_party/keras-retinanet:$PYTHONPATH"
 export PATH="/usr/local/bin:$PATH"
 export WORKON_HOME=~/.virtualenvs
