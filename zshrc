@@ -4,7 +4,7 @@ source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
 # Gcloud auth - https://cloud.google.com/docs/authentication/production
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
-export REMOTE=gabe-ubunutu.local #192.168.1.3
+export REMOTE=192.168.1.4
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
 alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
@@ -182,3 +182,6 @@ if [ -f '/Users/gabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabe
 export VIRTUALENVWRAPPER_PYTHON=python3
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fucking work.
+eval $(thefuck --alias)

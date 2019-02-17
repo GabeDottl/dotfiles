@@ -4,7 +4,6 @@
       default_beautifier: "yapf"
       formatter: "yapf"
   "autocomplete-python":
-    useKite: false
     useSnippets: "required"
   core:
     disabledPackages: [
@@ -13,8 +12,12 @@
       "project-colorize"
       "custom-title"
     ]
+    packagesWithKeymapsDisabled: [
+      "autocomplete-javascript"
+    ]
     telemetryConsent: "no"
     titleBar: "custom"
+    useTreeSitterParsers: false
     warnOnLargeFileLimit: 5
   "custom-title":
     template: "<%= projectName %><%= fileName %><% if (projectPath) { %> - <%= projectPath %><% if (gitHead) { %> [<%= gitHead %>]<% } %><% } %>"
@@ -22,6 +25,8 @@
     tabType: "soft"
   "exception-reporting":
     userId: "aee53ac6-b19d-4606-85ca-4579c8516c8a"
+  kite:
+    showWelcomeNotificationOnStartup: false
   "linter-python":
     executablePath: "/usr/local/"
   "linter-ui-default":
