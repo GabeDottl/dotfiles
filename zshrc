@@ -4,7 +4,7 @@ source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
 # Gcloud auth - https://cloud.google.com/docs/authentication/production
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
-export REMOTE=192.168.1.4
+export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
 alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
@@ -20,7 +20,7 @@ export PYDEVD_USE_FRAME_EVAL=NO
 #alias man='tldr'
 #-f indicates using the full command
 alias pk='pkill -f -9 '
-#export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
+export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Autojumpi
  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # End Autojump
@@ -34,7 +34,7 @@ export PYTHONSTARTUP=$DOTFILES/config/$HOSTNAME/pythonrc
 export PATH="/usr/local/bin:$PATH"
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=python3
-source /usr/local/bin/virtualenvwrapper.sh 
+#source /usr/local/bin/virtualenvwrapper.sh 
 export PYTHONPATH=/home/gabe/code/autocomplete:/home/gabe/code:$PYTHONPATH
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Does PYTHON3PATH mean anything? Who knows.
@@ -150,7 +150,7 @@ alias ll='ls -la'
 export PATH="/usr/local/bin:$PATH"
 
 # Add 'code' as in vscode
-#export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # OpenCV3 setup:
 export PATH="/usr/local/opt/opencv3/bin:$PATH"
@@ -185,6 +185,3 @@ if [ -f '/Users/gabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabe
 export VIRTUALENVWRAPPER_PYTHON=python3
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Fucking work.
-eval $(thefuck --alias)

@@ -1,6 +1,5 @@
 ln -s $DOTFILES/config ~/.config
 ln -s $DOTFILES/ssh ~/.ssh
-ln -s $DOTFILES/zsh ~/.zsh
 ln -s $DOTFILES/public/zshrc ~/.zshrc
 #ln -s $DOTFILES/zsh_history ~/.zsh_history Un-necessary
 ln -s $DOTFILES/config/vimrc ~/.vimrc
