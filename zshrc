@@ -12,14 +12,15 @@ alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced
 alias sshj='ssh gabe@$REMOTE -Y -t tmux a'
 alias sshjn='ssh gabe@$REMOTE -Y -t tmux'
 
-
+# https://stackoverflow.com/questions/50369959/systemerror-error-return-without-exception-set-when-using-requests-and-debugge
+export PYDEVD_USE_FRAME_EVAL=NO
 #PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%}'
 #export AUTOSUGGESTION_HIGHLIGHT_STYLE='fg=250'
 #alias cat='bat'
 #alias man='tldr'
 #-f indicates using the full command
 alias pk='pkill -f -9 '
-export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
+#export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Autojumpi
  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # End Autojump
@@ -29,13 +30,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
-export PYTHONSTARTUP=$DOTFILES/config/pythonrc
-export PYTHONPATH="/Users/gabe/nineslashnine/third_party/keras-retinanet:$PYTHONPATH"
+export PYTHONSTARTUP=$DOTFILES/config/$HOSTNAME/pythonrc
 export PATH="/usr/local/bin:$PATH"
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=python3
 source /usr/local/bin/virtualenvwrapper.sh 
-
+export PYTHONPATH=/home/gabe/code/autocomplete:/home/gabe/code:$PYTHONPATH
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Does PYTHON3PATH mean anything? Who knows.
 # export PYTHON3PATH=/usr/local/lib/python3.6/site-packages:$PYTHO3PATH
@@ -148,6 +148,9 @@ alias ll='ls -la'
 #source ~/.zsh/fish-prompt
 #PROMPT=~/.zsh/fish-prompt
 export PATH="/usr/local/bin:$PATH"
+
+# Add 'code' as in vscode
+#export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # OpenCV3 setup:
 export PATH="/usr/local/opt/opencv3/bin:$PATH"
