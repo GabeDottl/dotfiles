@@ -1,4 +1,4 @@
-ln -s $DOTFILES/config ~/.config
+#ln -s $DOTFILES/config ~/.config
 ln -s $DOTFILES/ssh ~/.ssh
 ln -s $DOTFILES/public/zshrc ~/.zshrc
 #ln -s $DOTFILES/zsh_history ~/.zsh_history Un-necessary
