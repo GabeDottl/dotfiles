@@ -53,6 +53,10 @@
     'prefix': 'linfx',
     'body':'info(f\'$1: {$1}\')'
 
+  'PrintX':
+    'prefix': 'pinfx',
+    'body':'print(f\'$1: {$1}\')'
+
   # 'Log Info':
   #   'prefix': 'linf',
   #   'body':'logging.getLogger(__name__).info("$1")'

@@ -3,8 +3,9 @@
     title: "Linux Code Repo"
     paths: [
       "/Users/gabe/ldrive/code/stock_optimization"
-      "/Users/gabe/code/resource_saver_chrome_extension"
-      "/Users/gabe/code/tinder_liker_chrome_extension"
+      "/Users/gabe/ldrive/code"
+      "/Users/gabe/code/autocomplete"
+      "/Users/gabe/code/yoda"
     ]
     color: "green"
     devMode: true

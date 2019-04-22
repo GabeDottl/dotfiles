@@ -3,14 +3,23 @@
     python:
       default_beautifier: "yapf"
       formatter: "yapf"
+      sort_imports: true
   "autocomplete-python":
+    useKite: false
     useSnippets: "required"
   core:
     disabledPackages: [
-      "symbols-view"
       "MagicPython"
       "project-colorize"
       "custom-title"
+      "atom-runner"
+      "autoclose-html"
+      "language-dot"
+      "language-javascript-semantic"
+      "symbol-gen"
+      "symbols-view"
+      "file-watcher"
+      "linter-python"
     ]
     packagesWithKeymapsDisabled: [
       "autocomplete-javascript"
@@ -22,20 +31,56 @@
   "custom-title":
     template: "<%= projectName %><%= fileName %><% if (projectPath) { %> - <%= projectPath %><% if (gitHead) { %> [<%= gitHead %>]<% } %><% } %>"
   editor:
+    fontSize: 13
     tabType: "soft"
   "exception-reporting":
     userId: "aee53ac6-b19d-4606-85ca-4579c8516c8a"
+  "ide-python":
+    pylsPlugins:
+      yapf:
+        enabled: true
+    python: "python3"
   kite:
     showWelcomeNotificationOnStartup: false
+  "linter-pylama":
+    configFileName: "~/pylama.ini"
+    executablePath: "/usr/local/bin/pylama"
+    ignoreErrorsAndWarnings: "C0111,C0301,C0330,D100,D101,D102,D103,D105,D107,D203,D205,D209,D211,D212,D213,D213,D404,E111,E1135,E1136,E1137,E114,E125,E261,E302,E501,E701,R0201,W0212,W0311,W0511"
+    interpreter: "python3"
+    isortOnSave: true
+    useIsort: true
+    usePep257: false
+    usePep8: false
+    usePylint: true
   "linter-python":
-    executablePath: "/usr/local/"
+    executablePath: "/usr/local/bin/pylama"
+    force: true
+    lintTrigger: "File modified"
+    withMcCabe: true
+    withPep257: true
+    withPep8: true
+    withPyflakes: true
   "linter-ui-default":
-    panelHeight: 69
+    hidePanelWhenEmpty: false
+    panelHeight: 300
+    showProviderName: true
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      linterDecorationsZIndex: 0
   "project-colorize":
     "/Users/gabe/code/stock_optimization:/Users/gabe/code/tensorflow_utils:/Users/gabe/ldrive/code/tensorflow_utils": "/Users/gabe/code/stock_optimization:/Users/gabe/code/tensorflow_utils:/Users/gabe/ldrive/code/tensorflow_utils"
   "project-manager":
     includeGitRepositories: true
-  "python-import-magic": {}
+  "python-import-magic":
+    pythonPaths: "/usr/local/bin/python3"
   welcome:
     showOnStartup: false
 ".python.regexp.source":

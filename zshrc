@@ -109,7 +109,7 @@ ZSH_THEME="fishy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions fzf fzf-zsh zsh-command-time command-time)
+plugins=(zsh-autosuggestions fzf command-time)
 
 # User configuration
 
@@ -164,7 +164,7 @@ source "$DOTFILES/config/bash_aliases"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
 # If command execution time above min. time, plugins will not output time.
-export ZSH_COMMAND_TIME_MIN_SECONDS=1
+export ZSH_COMMAND_TIME_MIN_SECONDS=5
 
 # Message to display (set to "" for disable).
 export ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
@@ -182,6 +182,10 @@ if [ -f '/Users/gabe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gabe/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/gabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabe/google-cloud-sdk/completion.zsh.inc'; fi
 
-export VIRTUALENVWRAPPER_PYTHON=python3
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fucking work.
+#eval $(thefuck --alias --enable-experimental-instant-mode)
+# Disable zsh's autocorrect functionaliy to allow instant fucks to work. 
+#unsetopt correct_all
+#eval $(thefuck --alias)
