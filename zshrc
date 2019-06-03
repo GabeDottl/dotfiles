@@ -28,6 +28,7 @@ export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH
 #alias pk='pkill'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
+setopt HIST_SAVE_NO_DUPS
 export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
 export PYTHONSTARTUP=$DOTFILES/config/$HOSTNAME/pythonrc
@@ -59,7 +60,6 @@ function frameworkpython {
 
 # Path to your oh-my-zsh installation.
 export ZSH="$DOTFILES/oh-my-zsh"
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it"ll load a random theme each
@@ -185,3 +185,14 @@ if [ -f '/Users/gabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabe
 export VIRTUALENVWRAPPER_PYTHON=python3
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#source $DOTFILES/zaw/zaw.zsh
+#bindkey '^R' zaw-history
+#bindkey -M filterselect '^R' down-line-or-history
+#bindkey -M filterselect '^S' up-line-or-history
+#bindkey -M filterselect '^E' accept-search
+#bindkey -M filterselect 'Enter' accept-search
+
+#zstyle ':filter-select:highlight' matched fg=green
+#zstyle ':filter-select' max-lines 10 
+#zstyle ':filter-select' case-insensitive yes # enable case-insensitive 
+#zstyle ':filter-select' extended-search yes # see below
