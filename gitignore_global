@@ -165,3 +165,4 @@ bin/
 *.tags1
 *.tags
 .magicindex.json
+.history

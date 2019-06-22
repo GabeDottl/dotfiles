@@ -36,7 +36,7 @@ export PATH="/usr/local/bin:$PATH"
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=python3
 #source /usr/local/bin/virtualenvwrapper.sh 
-export PYTHONPATH=/home/gabe/code/autocomplete:/home/gabe/code:$PYTHONPATH
+export PYTHONPATH=$PYTHONPATH
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Does PYTHON3PATH mean anything? Who knows.
 # export PYTHON3PATH=/usr/local/lib/python3.6/site-packages:$PYTHO3PATH
@@ -176,21 +176,32 @@ export PROJECT="nsn-cloud-playground"
 export BUCKETP2C="$PROJECT-pix2code"
 export CLOUDSDK_PYTHON=python
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/gabe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gabe/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/gabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabe/google-cloud-sdk/completion.zsh.inc'; fi
+# Escape square brackets by default. http://kinopyo.com/en/blog/escape-square-bracket-by-default-in-zsh
+alias rake='noglob rake'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#source $DOTFILES/zaw/zaw.zsh
-#bindkey '^R' zaw-history
-#bindkey -M filterselect '^R' down-line-or-history
-#bindkey -M filterselect '^S' up-line-or-history
-#bindkey -M filterselect '^E' accept-search
-#bindkey -M filterselect 'Enter' accept-search
+source $DOTFILES/zaw/zaw.zsh
+bindkey '^R' zaw-history
+bindkey -M filterselect '^R' down-line-or-history
+bindkey -M filterselect '^S' up-line-or-history
+bindkey -M filterselect '^E' accept-search
+bindkey -M filterselect 'Enter' accept-search
+zstyle ':filter-select:highlight' matched fg=green
+zstyle ':filter-select' max-lines 10 
+zstyle ':filter-select' case-insensitive yes # enable case-insensitive 
+zstyle ':filter-select' extended-search yes # see below
 
-#zstyle ':filter-select:highlight' matched fg=green
-#zstyle ':filter-select' max-lines 10 
-#zstyle ':filter-select' case-insensitive yes # enable case-insensitive 
-#zstyle ':filter-select' extended-search yes # see below
+
+
+### ZNT's installer added snippet ###
+#fpath=( "$fpath[@]" "$HOME/.config/znt/zsh-navigation-tools" )
+#autoload n-aliases n-cd n-env n-functions n-history n-kill n-list n-list-draw n-list-input n-options n-panelize n-help
+#autoload znt-usetty-wrapper znt-history-widget znt-cd-widget znt-kill-widget
+#alias naliases=n-aliases ncd=n-cd nenv=n-env nfunctions=n-functions nhistory=n-history
+#alias nkill=n-kill noptions=n-options npanelize=n-panelize nhelp=n-help
+#zle -N znt-history-widget
+#bindkey '^R' znt-history-widget
+#setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
+#zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
+### END ###
+
