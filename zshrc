@@ -35,7 +35,6 @@ export PATH="/usr/local/bin:$PATH"
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=python3
 #source /usr/local/bin/virtualenvwrapper.sh 
-export PYTHONPATH=/home/gabe/code/autocomplete:/home/gabe/code:$PYTHONPATH
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # Does PYTHON3PATH mean anything? Who knows.
 # export PYTHON3PATH=/usr/local/lib/python3.6/site-packages:$PYTHO3PATH
