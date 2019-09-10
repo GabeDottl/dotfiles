@@ -1,9 +1,8 @@
+source ../config/zsh_shared
 export DATA=$HOME/data
 export DOTFILES=$HOME/dotfiles
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
-# Gcloud auth - https://cloud.google.com/docs/authentication/production
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/gabe/synced/nsn-cloud-playground-131aaf54ad1a.json"
 export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
@@ -171,10 +170,6 @@ export ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
 setopt PROMPT_SUBST
 # https://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
 PROMPT='%{$(pwd|grep --color=always /)%${#PWD}G%} %(!.%F{red}.%F{cyan})%f%(!.%F{red}.)>%f '
-
-export PROJECT="nsn-cloud-playground"
-export BUCKETP2C="$PROJECT-pix2code"
-export CLOUDSDK_PYTHON=python
 
 # Escape square brackets by default. http://kinopyo.com/en/blog/escape-square-bracket-by-default-in-zsh
 alias rake='noglob rake'
