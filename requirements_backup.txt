@@ -124,7 +124,7 @@ stevedore==1.30.0
 TA-Lib==0.4.17
 tables==3.4.4
 tensorboard==1.12.0
-tensorflow==1.12.0
+tensorflow==1.15.2
 termcolor==1.1.0
 terminado==0.8.1
 testpath==0.4.2
