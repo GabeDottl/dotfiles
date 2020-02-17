@@ -1,9 +1,9 @@
-source ../config/zsh_shared
 export DATA=$HOME/data
 export DOTFILES=$HOME/dotfiles
+#source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
-export REMOTE=gabe-ubunutu.local #192.168.1.3
+#export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
 alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
@@ -13,7 +13,6 @@ alias sshjn='ssh gabe@$REMOTE -Y -t tmux'
 
 # https://stackoverflow.com/questions/50369959/systemerror-error-return-without-exception-set-when-using-requests-and-debugge
 export PYDEVD_USE_FRAME_EVAL=NO
-#PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%}'
 #export AUTOSUGGESTION_HIGHLIGHT_STYLE='fg=250'
 #alias cat='bat'
 #alias man='tldr'
@@ -168,23 +167,21 @@ export ZSH_COMMAND_TIME_MIN_SECONDS=5
 # Message to display (set to "" for disable).
 export ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
 setopt PROMPT_SUBST
-# https://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
-PROMPT='%{$(pwd|grep --color=always /)%${#PWD}G%} %(!.%F{red}.%F{cyan})%f%(!.%F{red}.)>%f '
 
 # Escape square brackets by default. http://kinopyo.com/en/blog/escape-square-bracket-by-default-in-zsh
 alias rake='noglob rake'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $DOTFILES/zaw/zaw.zsh
-bindkey '^R' zaw-history
-bindkey -M filterselect '^R' down-line-or-history
-bindkey -M filterselect '^S' up-line-or-history
-bindkey -M filterselect '^E' accept-search
-bindkey -M filterselect 'Enter' accept-search
-zstyle ':filter-select:highlight' matched fg=green
-zstyle ':filter-select' max-lines 10 
-zstyle ':filter-select' case-insensitive yes # enable case-insensitive 
-zstyle ':filter-select' extended-search yes # see below
+#source $DOTFILES/zaw/zaw.zsh
+#bindkey '^R' zaw-history
+#bindkey -M filterselect '^R' down-line-or-history
+#bindkey -M filterselect '^S' up-line-or-history
+#bindkey -M filterselect '^E' accept-search
+#bindkey -M filterselect 'Enter' accept-search
+#zstyle ':filter-select:highlight' matched fg=green
+#zstyle ':filter-select' max-lines 10 
+#zstyle ':filter-select' case-insensitive yes # enable case-insensitive 
+#zstyle ':filter-select' extended-search yes # see below
 
 
 
@@ -200,3 +197,51 @@ zstyle ':filter-select' extended-search yes # see below
 #zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
 ### END ###
 
+
+#### HISTORY CONFIG #####
+# zsh options
+#Initial
+setopt appendhistory autocd beep extendedglob nomatch notify
+#history
+HISTSIZE=100000000
+SAVEHIST=100000000
+setopt HIST_IGNORE_SPACE
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
+#dirs
+setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups
+setopt auto_name_dirs
+#appearance
+setopt multios
+setopt cdablevarS
+setopt prompt_subst
+#misc
+setopt long_list_jobs
+#correction
+setopt correct_all
+#completion
+setopt auto_menu         # show completion menu on succesive tab press
+setopt complete_in_word
+setopt completealiases
+setopt always_to_end
+#syml
+setopt chaselinks
+#stop pissing me off
+#### END HISTORY #######
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+PROMPT='%{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>)'
+# Don't show $USER@$HOSTNAME in prompt (https://www.maketecheasier.com/remove-user-hostname-terminal-prompt/): 
+#PS1='\$ '
+
+#PROMPT='$%{$fg[cyan]%}%c%{$reset_color%}'
+# https://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
+#PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%}'
+#setopt prompt_subst
+#PS1='%n@%m $(shrink-path -f)>'
+#zstyle :prompt:shrink_path fish yes
