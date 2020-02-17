@@ -70,7 +70,7 @@ mpl-finance==0.10.0
 msgpack==0.6.0
 nbconvert==5.4.0
 nbformat==4.4.0
-notebook==5.7.2
+notebook==5.7.8
 numexpr==2.6.9
 numpy==1.15.4
 oauth2client==4.1.3
