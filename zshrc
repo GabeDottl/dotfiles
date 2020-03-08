@@ -1,6 +1,6 @@
 export DATA=$HOME/data
 export DOTFILES=$HOME/dotfiles
-#source $DOTFILES/config/zsh_shared
+source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
 export HOST=$(hostname) # Needed for various usages below and elsewhere 

@@ -15,3 +15,4 @@ ln -s $DOTFILES/config/ptpython/config.py ~/.ptpython/config.py
 ln -s $DOTFILES/public/tmux.conf ~/.tmux.conf
 ln -s $DOTFILES/config/$HOSTNAME/tmux.conf ~/tmux_extra
 ln -s $DOTFILES/jupyter ~/.jupyter
+$DOTFILES/config/$HOSTNAME/gen_soft_links.sh
