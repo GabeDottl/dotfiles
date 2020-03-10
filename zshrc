@@ -3,6 +3,7 @@ export DOTFILES=$HOME/dotfiles
 #source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
+export HOST=$(hostname) # Needed for various usages below and elsewhere 
 #export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
@@ -31,7 +32,7 @@ export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
 export PYTHONSTARTUP=$DOTFILES/config/$HOSTNAME/pythonrc
 export PATH="/usr/local/bin:$PATH"
-export WORKON_HOME=~/.virtualenvs
+export WORKON_HOME=~/dotfiles/virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=python3
 #source /usr/local/bin/virtualenvwrapper.sh 
 export PYTHONPATH=$PYTHONPATH
@@ -107,7 +108,7 @@ ZSH_THEME="fishy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions fzf command-time)
+plugins=(autojump zsh-autosuggestions fzf command-time)
 
 # User configuration
 
