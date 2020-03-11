@@ -1,7 +1,14 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export DATA=$HOME/data
 export CODE=$HOME/code
 export DOTFILES=$HOME/dotfiles
-#source $DOTFILES/config/zsh_shared
+source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
 export HOST=$(hostname) # Needed for various usages below and elsewhere 
@@ -21,9 +28,6 @@ export PYDEVD_USE_FRAME_EVAL=NO
 #-f indicates using the full command
 alias pk='pkill -f -9 '
 export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
-# Autojumpi
- [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-# End Autojump
 
 #alias pk='pkill'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -65,8 +69,11 @@ export ZSH="$DOTFILES/oh-my-zsh"
 # Optionally, if you set this to "random", it"ll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="fishy"
+# ZSH_THEME="fishy"
 
+# Note: p10k is not included with oh-my-zsh - need to install with following:
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -144,7 +151,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #export PATH=$PATH:"/Applications/Android Studio.app/sdk/platform-tools"
 alias ll='ls -la'
-[[ -s /usr/local/etc/profile.d/autojump.sh ]] && . /usr/local/etc/profile.d/autojump.sh
 #source ~/.zsh/fish-prompt
 #PROMPT=~/.zsh/fish-prompt
 export PATH="/usr/local/bin:$PATH"
@@ -247,3 +253,21 @@ PROMPT='%{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>)'
 #setopt prompt_subst
 #PS1='%n@%m $(shrink-path -f)>'
 #zstyle :prompt:shrink_path fish yes
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Autojump - disabled in favor of fasd.
+# [[ -s /usr/local/etc/profile.d/autojump.sh ]] && . /usr/local/etc/profile.d/autojump.sh
+#  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# End Autojump
+
+# Use fasd instead of autojump - https://github.com/clvv/fasd#introduction
+alias j='fasd_cd -d' 
+# Make fasd_cd work - https://github.com/clvv/fasd/issues/24
+eval "$(fasd --init auto)"
+
+# Useful fasd aliases
+alias v='f -e vim' # quick opening files with vim
+alias m='f -e mplayer' # quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open

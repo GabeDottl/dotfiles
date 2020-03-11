@@ -15,3 +15,7 @@ ln -s $DOTFILES/config/ptpython/config.py ~/.ptpython/config.py
 ln -s $DOTFILES/public/tmux.conf ~/.tmux.conf
 ln -s $DOTFILES/config/$HOSTNAME/tmux.conf ~/tmux_extra
 ln -s $DOTFILES/jupyter ~/.jupyter
+mkdir ~/.config
+ln -s $DOTFILES/config/yapf ~/,config/yapf
+$DOTFILES/config/$HOSTNAME/gen_soft_links.sh
+ln -s /home/gabe/dotfiles/public/p10k.zsh ~/.p10k.zsh
