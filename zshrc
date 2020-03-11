@@ -1,4 +1,5 @@
 export DATA=$HOME/data
+export CODE=$HOME/code
 export DOTFILES=$HOME/dotfiles
 #source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOST/zshrc
