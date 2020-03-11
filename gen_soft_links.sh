@@ -18,3 +18,4 @@ ln -s $DOTFILES/jupyter ~/.jupyter
 mkdir ~/.config
 ln -s $DOTFILES/config/yapf ~/,config/yapf
 $DOTFILES/config/$HOSTNAME/gen_soft_links.sh
+ln -s /home/gabe/dotfiles/public/p10k.zsh ~/.p10k.zsh
