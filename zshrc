@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Set default editor.
+export VISUAL=/usr/bin/vim
+
 export DATA=$HOME/data
 export CODE=$HOME/code
 export DOTFILES=$HOME/dotfiles
@@ -12,6 +15,8 @@ source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
 export HOST=$(hostname) # Needed for various usages below and elsewhere 
+export CONFIG=$DOTFILES/config
+export CONFIGH=$CONFIG/$HOST
 #export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
@@ -94,7 +99,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -231,7 +236,7 @@ setopt prompt_subst
 #misc
 setopt long_list_jobs
 #correction
-setopt correct_all
+#setopt correct_all
 #completion
 setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
