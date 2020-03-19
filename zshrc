@@ -44,6 +44,9 @@ export SAVEHIST=10000000
 export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
 export PYTHONSTARTUP=$DOTFILES/config/$HOSTNAME/pythonrc
 export PATH="/usr/local/bin:$PATH"
+# Add protoc to path.
+export PATH="$PATH:$CODE/third_party/protoc/bin"
+
 export WORKON_HOME=~/dotfiles/virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=python3
 #source /usr/local/bin/virtualenvwrapper.sh 
