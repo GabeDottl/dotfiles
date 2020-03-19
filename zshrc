@@ -33,6 +33,8 @@ export PYDEVD_USE_FRAME_EVAL=NO
 #-f indicates using the full command
 alias pk='pkill -f -9 '
 export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
+# Add protoc-gen-dart to path 
+export PATH="$PATH":"$HOME/flutter/flutter/.pub-cache/bin"
 
 #alias pk='pkill'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
