@@ -5,18 +5,24 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# DOCKER CONFIG
+# This enables using moby/buildkit project which generally should make docker
+# builds faster. https://docs.docker.com/engine/reference/builder/#buildkit 
+DOCKER_BUILDKIT=1
+# END DOCKER
+
 # Set default editor.
 export VISUAL=/usr/bin/vim
 
 export DATA=$HOME/data
 export CODE=$HOME/code
 export DOTFILES=$HOME/dotfiles
-source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOST/zshrc
 export HOSTNAME=$(hostname) # Needed for TMUX
 export HOST=$(hostname) # Needed for various usages below and elsewhere 
 export CONFIG=$DOTFILES/config
 export CONFIGH=$CONFIG/$HOST
+source $DOTFILES/config/zsh_shared
 #export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
@@ -92,7 +98,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAY=13

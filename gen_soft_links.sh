@@ -1,4 +1,4 @@
-DOTFILES=`realpath -s $(dirname $0)` # $0 is the filepath to this script.
+DOTFILES=`realpath -s $(dirname $0)`/.. # $0 is the filepath to this script.
 #DOTFILES=$HOME/dotfiles
 
 ln -s $DOTFILES/ssh ~/.ssh
