@@ -38,7 +38,7 @@ export PYDEVD_USE_FRAME_EVAL=NO
 #alias man='tldr'
 #-f indicates using the full command
 alias pk='pkill -f -9 '
-export PATH="~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
+export PATH="$HOME/.local/bin:~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Add protoc-gen-dart to path 
 export PATH="$PATH":"$HOME/flutter/flutter/.pub-cache/bin"
 
