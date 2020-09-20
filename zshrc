@@ -291,4 +291,4 @@ alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # $HOST being set causes npm start to use $HOST as the host for the local webserver which causes it not to work, so we reset here to default to localhost.
-unset $HOST 
+unset HOST 
