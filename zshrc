@@ -17,12 +17,11 @@ export VISUAL=/usr/bin/vim
 export DATA=$HOME/data
 export CODE=$HOME/code
 export DOTFILES=$HOME/dotfiles
-source $DOTFILES/config/$HOST/zshrc
-export HOSTNAME=$(hostname) # Needed for TMUX
-export HOST=$(hostname) # Needed for various usages below and elsewhere 
-export CONFIG=$DOTFILES/config
-export CONFIGH=$CONFIG/$HOST
 source $DOTFILES/config/zsh_shared
+source $DOTFILES/config/$HOSTNAME/zshrc
+export HOSTNAME=$(hostname) # Needed for TMUX
+export CONFIG=$DOTFILES/config
+export CONFIGH=$CONFIG/$HOSTNAME
 #export REMOTE=gabe-ubunutu.local #192.168.1.3
 export EXT_DRIVE='/Volumes/128GB_2'
 alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
@@ -40,14 +39,15 @@ export PYDEVD_USE_FRAME_EVAL=NO
 alias pk='pkill -f -9 '
 export PATH="$HOME/.local/bin:~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Add protoc-gen-dart to path 
-export PATH="$PATH":"$HOME/flutter/flutter/.pub-cache/bin"
+#export PATH="$PATH":"$HOME/flutter/flutter/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 #alias pk='pkill'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 setopt HIST_SAVE_NO_DUPS
 export SAVEHIST=10000000
-export HISTFILE="$DOTFILES/history/$HOST/zsh_history"
+export HISTFILE="$DOTFILES/history/$HOSTNAME/zsh_history"
 export PYTHONSTARTUP=$DOTFILES/config/$HOSTNAME/pythonrc
 export PATH="/usr/local/bin:$PATH"
 # Add protoc to path.
@@ -248,6 +248,8 @@ setopt prompt_subst
 setopt long_list_jobs
 #correction
 #setopt correct_all
+unsetopt correct
+unsetopt correct_all
 #completion
 setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
@@ -287,3 +289,6 @@ eval "$(fasd --init auto)"
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
+
+# $HOST being set causes npm start to use $HOST as the host for the local webserver which causes it not to work, so we reset here to default to localhost.
+unset $HOST 
