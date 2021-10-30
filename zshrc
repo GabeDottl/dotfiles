@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
+#export FZF_DEFAULT_COMMAND=`rg --files --hidden`
+
 # DOCKER CONFIG
 # This enables using moby/buildkit project which generally should make docker
 # builds faster. https://docs.docker.com/engine/reference/builder/#buildkit 
@@ -13,13 +16,14 @@ DOCKER_BUILDKIT=1
 
 # Set default editor.
 export VISUAL=/usr/bin/vim
-
+export HOSTNAME="Gabriels-MacBook-Pro.local" # $(hostname) # Needed for TMUX
+export DOTFILES=$HOME/dotfiles
+export HISTFILE="$DOTFILES/history/$HOSTNAME/zsh_history"
+export OUTPUT_HISTFILE="$DOTFILES/history/$HOSTNAME/zsh_output"
 export DATA=$HOME/data
 export CODE=$HOME/code
-export DOTFILES=$HOME/dotfiles
 source $DOTFILES/config/zsh_shared
 source $DOTFILES/config/$HOSTNAME/zshrc
-export HOSTNAME=$(hostname) # Needed for TMUX
 export CONFIG=$DOTFILES/config
 export CONFIGH=$CONFIG/$HOSTNAME
 #export REMOTE=gabe-ubunutu.local #192.168.1.3
@@ -40,6 +44,14 @@ alias pk='pkill -f -9 '
 export PATH="$HOME/.local/bin:~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Add protoc-gen-dart to path 
 #export PATH="$PATH":"$HOME/flutter/flutter/.pub-cache/bin"
+
+# Assumes brew install roswell
+# https://marketplace.visualstudio.com/items?itemName=ailisp.commonlisp-vscode
+export PATH=$PATH:~/.roswell/bin
+# Add `sbcl` to path
+alias sbcl='ros run'
+#export PATH=$PATH:~/.roswell/impls/x86-64/darwin/sbcl-bin/2.1.10/bin/
+# For NPM/NodeJS.
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 #alias pk='pkill'
@@ -47,7 +59,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PATH="/opt/local/bin:/usr/local/sbin:$PATH"
 setopt HIST_SAVE_NO_DUPS
 export SAVEHIST=10000000
-export HISTFILE="$DOTFILES/history/$HOSTNAME/zsh_history"
 export PYTHONSTARTUP=$DOTFILES/config/$HOSTNAME/pythonrc
 export PATH="/usr/local/bin:$PATH"
 # Add protoc to path.
@@ -286,9 +297,9 @@ alias j='fasd_cd -d'
 eval "$(fasd --init auto)"
 
 # Useful fasd aliases
-alias v='f -e vim' # quick opening files with vim
+#alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # $HOST being set causes npm start to use $HOST as the host for the local webserver which causes it not to work, so we reset here to default to localhost.
-unset HOST 
+unset HOST
