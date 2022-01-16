@@ -12,3 +12,7 @@ $DOTFILES/config/gen_soft_links.sh
 $DOTFILES/config/$HOSTNAME/gen_soft_links.sh
 
 
+ln -s ~/dotfiles/.doom.d ~/.doom.d
+ln -s ~/dotfiles/ ~/
+ln -s ~/dotfiles/.emacs.d ~/.emacs.d
+ln -s ~/dotfiles/.docker ~/.docker

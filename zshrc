@@ -6,6 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
+export SGS_DIR=$HOME/code/SGS
+export CLOUDFLARE_BEARER_TOKEN="FDNtCgeITVtZnU7CPTOf74y6opXhxC38peRnQE-h"
+#TODO?: export CF_API_TOKEN=$CLOUDFLARE_BEARER_TOKEN wrangler publish
+
 #export FZF_DEFAULT_COMMAND=`rg --files --hidden`
 
 # DOCKER CONFIG
@@ -41,16 +45,22 @@ export PYDEVD_USE_FRAME_EVAL=NO
 #alias man='tldr'
 #-f indicates using the full command
 alias pk='pkill -f -9 '
+export PATH=/Users/gabedottl/.emacs.d/bin:$PATH
 export PATH="$HOME/.local/bin:~/Downloads/android-platform-tools:/usr/local/opt/opencv3/bin:$PATH"
 # Add protoc-gen-dart to path 
 #export PATH="$PATH":"$HOME/flutter/flutter/.pub-cache/bin"
 
+
+# Use gnu-time (gtime) instead of time.
+# brew install gnu-time
+#export PATH="/usr/local/opt/gnu-time/libexec/gnubin:$PATH"
+alias time=gtime
 # Assumes brew install roswell
 # https://marketplace.visualstudio.com/items?itemName=ailisp.commonlisp-vscode
 export PATH=$PATH:~/.roswell/bin
 # Add `sbcl` to path
-alias sbcl='ros run'
-#export PATH=$PATH:~/.roswell/impls/x86-64/darwin/sbcl-bin/2.1.10/bin/
+#alias sbcl='ros run'
+export PATH=~/.roswell/impls/x86-64/darwin/sbcl-bin/2.1.10/bin/:$PATH
 # For NPM/NodeJS.
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
@@ -303,3 +313,5 @@ alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # $HOST being set causes npm start to use $HOST as the host for the local webserver which causes it not to work, so we reset here to default to localhost.
 unset HOST
+export PATH=/Users/gabedottl/.cargo/bin:$PATH
+
