@@ -1,14 +1,12 @@
+source $DOTFILES/config/zsh_shared
+HOSTNAME=`hostname`
+source $DOTFILES/config/$HOSTNAME/zshrc
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-
-export SGS_DIR=$HOME/code/SGS
-export CLOUDFLARE_BEARER_TOKEN="FDNtCgeITVtZnU7CPTOf74y6opXhxC38peRnQE-h"
-#TODO?: export CF_API_TOKEN=$CLOUDFLARE_BEARER_TOKEN wrangler publish
 
 #export FZF_DEFAULT_COMMAND=`rg --files --hidden`
 
@@ -18,25 +16,6 @@ export CLOUDFLARE_BEARER_TOKEN="FDNtCgeITVtZnU7CPTOf74y6opXhxC38peRnQE-h"
 DOCKER_BUILDKIT=1
 # END DOCKER
 
-# Set default editor.
-export VISUAL=/usr/bin/vim
-export HOSTNAME="Gabriels-MacBook-Pro.local" # $(hostname) # Needed for TMUX
-export DOTFILES=$HOME/dotfiles
-export HISTFILE="$DOTFILES/history/$HOSTNAME/zsh_history"
-export OUTPUT_HISTFILE="$DOTFILES/history/$HOSTNAME/zsh_output"
-export DATA=$HOME/data
-export CODE=$HOME/code
-source $DOTFILES/config/zsh_shared
-source $DOTFILES/config/$HOSTNAME/zshrc
-export CONFIG=$DOTFILES/config
-export CONFIGH=$CONFIG/$HOSTNAME
-#export REMOTE=gabe-ubunutu.local #192.168.1.3
-export EXT_DRIVE='/Volumes/128GB_2'
-alias push='rsync -avrotyie ssh ~/synced/pix2code gabe@$REMOTE:/home/gabe/synced/pix2code'
-alias pull='rsync -avrotyie ssh gabe@$REMOTE:/home/gabe/synced/pix2code ~/synced/pix2code'
-# -Y for trusted X11 forwarding.
-alias sshj='ssh gabe@$REMOTE -Y -t tmux a'
-alias sshjn='ssh gabe@$REMOTE -Y -t tmux'
 
 # https://stackoverflow.com/questions/50369959/systemerror-error-return-without-exception-set-when-using-requests-and-debugge
 export PYDEVD_USE_FRAME_EVAL=NO
